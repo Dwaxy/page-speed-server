@@ -22,9 +22,7 @@ router.get('/', function(request, response, next) {
     .sort({ createdAt: 'desc' })
     // .populate('author')
     .then(function(projects) {
-      console.log('test');
-      //cant do this
-      //return response.json({articles: });
+      console.log('get projects');
       return response.json({
         projects: projects.map(function(project) {
           return project.toJSON();
