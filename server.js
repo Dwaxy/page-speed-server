@@ -15,6 +15,7 @@ app.use(bodyParser.json());
 
 //models
 require('./models/Project');
+require('./models/User')
 
 //routes
 app.use(require('./routes'));

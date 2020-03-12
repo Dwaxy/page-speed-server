@@ -9,7 +9,7 @@ const ProjectSchema = new mongoose.Schema(
     copy: String,
     firstImage: String,
     secondImage: String,
-    thirdImage: String
+    thirdImage: String,
     // technologies: Array,
     // goals: Array,
     // pains: Array
