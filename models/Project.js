@@ -10,6 +10,10 @@ const ProjectSchema = new mongoose.Schema(
     firstImage: String,
     secondImage: String,
     thirdImage: String,
+    author: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User"
+    },
     // technologies: Array,
     // goals: Array,
     // pains: Array
