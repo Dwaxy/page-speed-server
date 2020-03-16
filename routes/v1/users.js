@@ -20,7 +20,7 @@ router.param('user', function(req, res, next, id){
 });
 
 router.get('/', function(req, res, next){
-    console.log('get users');
+    console.log('get all users');
     User
         .find()
         .sort({createdAt: 'desc'})
@@ -59,11 +59,11 @@ router.get('/:user', async function(req, res, next){
 // /**
 //  * Delete a user.
 //  */
-// router.delete('/:user', async function(req, res, next){
-//     console.log('delete user');
-//     await User.findByIdAndRemove(req.user.id);
-//     return res.sendStatus(204);
-// });
+router.delete('/:user', async function(req, res, next){
+    console.log('delete user');
+    await User.findByIdAndRemove(req.user.id);
+    return res.sendStatus(204);
+});
 
 // /*******
 //  * Entity relationships
