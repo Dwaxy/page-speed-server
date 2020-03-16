@@ -39,4 +39,25 @@ router.post('/', async function(request, response, next) {
   return response.json({ project: project.toJSON() });
 });
 
+// get a project by id
+router.get('/:project', function(request, response, next) {
+  console.log('get project by id');
+  return response.json({ project: request.project.toJSON() });
+});
+
+// update a project
+router.put('/:project', async function(request, response, next) {
+  console.log('update project');
+  let updatedProject = _.extend(request.project, request.body);
+  await updatedProject.save();
+  return response.json({ project: updatedProject.toJSON() });
+});
+
+// delete a project
+router.delete('/:project', async function(request, response, next) {
+  console.log('delete project');
+  await Project.findByIdAndRemove(request.project.id);
+  return response.sendStatus(204);
+});
+
 module.exports = router;
