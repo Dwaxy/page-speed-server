@@ -114,6 +114,7 @@ router.get('/:user/projects', async function(req, res, next) {
   * POST /v1/users/login
   */
 router.post('/login', async function(req, res, next) {
+    console.log("login user")
     if(!req.body.email) {
         return res.status(422).json({
             succsess: false,
